@@ -453,6 +453,10 @@ export class Interpreter<
     this.initialized = false;
     this._status = InterpreterStatus.Stopped;
 
+    if (this.devTools) {
+      this.devTools.unsubscribe();
+    }
+
     return this;
   }
   /**
